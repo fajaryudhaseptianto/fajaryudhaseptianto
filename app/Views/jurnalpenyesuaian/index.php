@@ -51,34 +51,40 @@
                         ?>
                         <?php foreach ($dttransaksi as $key => $value) : ?>
                             <?php
-                            $d = $value->jumdebit;
-                            $k = $value->jumkredit;
+                            $d = floatval($value->jumdebit ?? 0);
+                            $k = floatval($value->jumkredit ?? 0);
+                            
+                            // Untuk jurnal penyesuaian, tampilkan debit dan kredit secara terpisah
+                            // Jika debit > kredit, tampilkan selisih di kolom debit
+                            // Jika kredit > debit, tampilkan selisih di kolom kredit
                             $neraca = $d - $k;
 
                             if($neraca < 0){
                                 $kreditnew = abs($neraca);
+                                $debitnew = 0;
                                 $tk = $tk + $kreditnew;
-                            } else {
-                                $kreditnew = 0;
-
-                            }
-
-                            if($neraca > 0){
+                            } else if($neraca > 0){
                                 $debitnew = $neraca;
+                                $kreditnew = 0;
                                 $td = $td + $debitnew;
                             } else {
+                                // Jika balance, tidak tampilkan
                                 $debitnew = 0;
+                                $kreditnew = 0;
                             }
 
+                            // Hanya tampilkan jika ada nilai debit atau kredit
+                            if($debitnew > 0 || $kreditnew > 0) :
                             ?>
 
                             <tr>
                                 <td><?= $value->kode_akun3 ?></td>
                                 <td><?= $value->nama_akun3 ?></td>
-                                <td class="text-right"><?= number_format($debitnew, 0, ",", ",") ?></td>
-                                <td class="text-right"><?= number_format($kreditnew, 0, ",", ",") ?></td>
+                                <td class="text-right"><?= number_format($debitnew, 0, ",", ".") ?></td>
+                                <td class="text-right"><?= number_format($kreditnew, 0, ",", ".") ?></td>
                             </tr>
 
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </tbody>
 

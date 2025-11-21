@@ -43,9 +43,30 @@ class ModelNilaiPenyesuaian extends Model
     function ambilrelasiid($id)
     {
         $builder = $this->db->table('tbl_nilaipenyesuaian')
-        ->where("id_penyesuaian=$id")
-        ->join('akun3s', 'akun3s.kode_akun3 = tbl_nilaipenyesuaian.kode_akun3')
-        ->join('tbl_status','tbl_status.id_status = tbl_nilaipenyesuaian.id_status');
+            ->select([
+                'tbl_nilaipenyesuaian.id_penyesuaian',
+                'tbl_nilaipenyesuaian.kode_akun3',
+                'tbl_nilaipenyesuaian.debit',
+                'tbl_nilaipenyesuaian.kredit',
+                'tbl_nilaipenyesuaian.id_status',
+                'akun3s.nama_akun3',
+                'tbl_status.status'
+            ])
+            ->where('tbl_nilaipenyesuaian.id_penyesuaian', $id)
+            ->join('akun3s', 'akun3s.kode_akun3 = tbl_nilaipenyesuaian.kode_akun3')
+            ->join('tbl_status', 'tbl_status.id_status = tbl_nilaipenyesuaian.id_status')
+            ->groupBy([
+                'tbl_nilaipenyesuaian.id_penyesuaian',
+                'tbl_nilaipenyesuaian.kode_akun3',
+                'tbl_nilaipenyesuaian.debit',
+                'tbl_nilaipenyesuaian.kredit',
+                'tbl_nilaipenyesuaian.id_status',
+                'akun3s.nama_akun3',
+                'tbl_status.status'
+            ])
+            ->orderBy('tbl_nilaipenyesuaian.debit', 'DESC')
+            ->orderBy('tbl_nilaipenyesuaian.kredit', 'ASC')
+            ->orderBy('tbl_nilaipenyesuaian.kode_akun3', 'ASC');
 
         $query = $builder->get();
         return $query->getResultObject();

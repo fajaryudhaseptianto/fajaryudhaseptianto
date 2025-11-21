@@ -10,6 +10,28 @@
     </div>
 
     <div class="section-body">
+        <?php if (session()->getFlashdata('success')) : ?>
+            <div class="alert alert-success alert-dismissible show fade">
+                <div class="alert-body">
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            </div>
+        <?php endif; ?>
+        
+        <?php if (session()->getFlashdata('error')) : ?>
+            <div class="alert alert-danger alert-dismissible show fade">
+                <div class="alert-body">
+                    <button class="close" data-dismiss="alert">
+                        <span>&times;</span>
+                    </button>
+                    <?= session()->getFlashdata('error') ?>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <div class="card">
             <div class="card-header">
                 <h4>Daftar Pengguna</h4>
@@ -41,6 +63,21 @@
                         <?php endif ?>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>Pembersihan Data</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Hapus data duplikat di tabel transaksi dan penyesuaian untuk memperbaiki balance jurnal.</p>
+                <form action="<?= site_url('admin/clean-duplicates') ?>" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin membersihkan data duplikat? Pastikan sudah backup database terlebih dahulu!');">
+                    <?= csrf_field() ?>
+                    <button type="submit" class="btn btn-warning">
+                        <i class="fas fa-broom"></i> Bersihkan Data Duplikat
+                    </button>
+                </form>
             </div>
         </div>
     </div>

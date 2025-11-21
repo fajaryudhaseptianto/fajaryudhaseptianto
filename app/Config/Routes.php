@@ -64,6 +64,7 @@ $routes->post('/posting', 'Posting::index');
 
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->post('/admin/clean-duplicates', 'Admin::cleanDuplicates', ['filter' => 'role:admin']);
 
 $routes->resource('akun2');
 $routes->resource('akun3');

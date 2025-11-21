@@ -93,16 +93,38 @@ class Penyesuaian extends ResourceController
         $kredit = $this->request->getVar('kredit');
         $id_status = $this->request->getVar('id_status');
 
+        $data2 = [];
+        $uniqRows = [];
         for ($i = 0; $i < count($kode_akun3); $i++) {
+            $kode = $kode_akun3[$i] ?? '';
+            $debitVal = $debit[$i] ?? '';
+            $kreditVal = $kredit[$i] ?? '';
+            $statusVal = $id_status[$i] ?? '';
+
+            // Skip jika semua field kosong
+            if (empty($kode) && empty($debitVal) && empty($kreditVal) && empty($statusVal)) {
+                continue;
+            }
+
+            // Buat signature untuk deteksi duplikasi
+            $signature = implode('|', [$kode, $debitVal, $kreditVal, $statusVal]);
+            if (isset($uniqRows[$signature])) {
+                continue; // Skip duplikat
+            }
+            $uniqRows[$signature] = true;
+
             $data2[] = [
                 'id_penyesuaian' => $id_penyesuaian,
-                'kode_akun3' => $kode_akun3[$i],
-                'debit' => $debit[$i],
-                'kredit' => $kredit[$i],
-                'id_status' => $id_status[$i]
+                'kode_akun3' => $kode,
+                'debit' => $debitVal === '' ? 0 : $debitVal,
+                'kredit' => $kreditVal === '' ? 0 : $kreditVal,
+                'id_status' => $statusVal
             ];
         }
-        $this->objNilaiPenyesuaian->insertBatch($data2);
+        
+        if (!empty($data2)) {
+            $this->objNilaiPenyesuaian->insertBatch($data2);
+        }
         return redirect()->to(site_url('penyesuaian'))->with('success', 'Data Berhasil di Simpan');
     }
 
@@ -180,7 +202,8 @@ class Penyesuaian extends ResourceController
      */
     public function delete($id = null)
     {
-        $this->objPenyesuaian->where(['id_penyesuaian' => $id])->DELETE();
+        $this->objNilaiPenyesuaian->where(['id_penyesuaian' => $id])->delete();
+        $this->objPenyesuaian->where(['id_penyesuaian' => $id])->delete();
         return redirect()->to(site_url('penyesuaian'))->with('success', 'Data Berhasil Di Hapus');
     }
 }
