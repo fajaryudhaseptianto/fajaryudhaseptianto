@@ -44,6 +44,7 @@ class ModelNilaiPenyesuaian extends Model
     {
         $builder = $this->db->table('tbl_nilaipenyesuaian')
             ->select([
+                'tbl_nilaipenyesuaian.id',
                 'tbl_nilaipenyesuaian.id_penyesuaian',
                 'tbl_nilaipenyesuaian.kode_akun3',
                 'tbl_nilaipenyesuaian.debit',
@@ -53,9 +54,10 @@ class ModelNilaiPenyesuaian extends Model
                 'tbl_status.status'
             ])
             ->where('tbl_nilaipenyesuaian.id_penyesuaian', $id)
-            ->join('akun3s', 'akun3s.kode_akun3 = tbl_nilaipenyesuaian.kode_akun3')
-            ->join('tbl_status', 'tbl_status.id_status = tbl_nilaipenyesuaian.id_status')
+            ->join('akun3s', 'akun3s.kode_akun3 = tbl_nilaipenyesuaian.kode_akun3', 'inner')
+            ->join('tbl_status', 'tbl_status.id_status = tbl_nilaipenyesuaian.id_status', 'inner')
             ->groupBy([
+                'tbl_nilaipenyesuaian.id',
                 'tbl_nilaipenyesuaian.id_penyesuaian',
                 'tbl_nilaipenyesuaian.kode_akun3',
                 'tbl_nilaipenyesuaian.debit',

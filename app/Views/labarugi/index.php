@@ -41,11 +41,17 @@
                         $totpendapatan = 0;
                         $totbeban = 0;
                         $beban = 0;
-
+                        $shownAkun = []; // Track akun yang sudah ditampilkan untuk menghindari duplikasi
                         ?>
 
                         <?php foreach ($dttransaksi as $key => $value) : ?>
                             <?php
+                            // Skip jika akun sudah ditampilkan
+                            if (isset($shownAkun[$value->kode_akun3])) {
+                                continue;
+                            }
+                            $shownAkun[$value->kode_akun3] = true;
+                            
                             $pendapatan = $value->jumkredit + $value->jumkredits;
                             $totpendapatan = $totpendapatan + $pendapatan;
                             ?>
@@ -70,8 +76,17 @@
                             <td></td>
                         </tr>
 
-                        <?php foreach ($dttransaksi as $key => $value) : ?>
-                            <?php if ($value->kode_akun2 == 51) : ?>
+                        <?php 
+                        $shownBeban = []; // Track beban yang sudah ditampilkan
+                        foreach ($dttransaksi as $key => $value) : ?>
+                            <?php 
+                            // Skip jika akun sudah ditampilkan
+                            if (isset($shownBeban[$value->kode_akun3])) {
+                                continue;
+                            }
+                            $shownBeban[$value->kode_akun3] = true;
+                            
+                            if ($value->kode_akun2 == 51) : ?>
                                 <?php
                                 $beban = $value->jumdebit + $value->jumdebits;
                                 $totbeban = $totbeban + $beban;

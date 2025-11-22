@@ -30,6 +30,12 @@ class SeederAkun3 extends Seeder
             ],
             [
                 'kode_akun3' => 1104,
+                'nama_akun3'    => 'Sewa Dibayar Dimuka',
+                'kode_akun1'    => '1',
+                'kode_akun2'    => '11',
+            ],
+            [
+                'kode_akun3' => 1105,
                 'nama_akun3'    => 'Asuransi Dibayar Dimuka',
                 'kode_akun1'    => '1',
                 'kode_akun2'    => '11',

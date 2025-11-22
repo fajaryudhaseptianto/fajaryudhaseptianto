@@ -140,8 +140,8 @@ class Penyesuaian extends ResourceController
         $penyesuaian = $this->objPenyesuaian->find($id);
         $akun3 = $this->objAkun3->findAll();
         $status = $this->objStatus->findAll();
-        $nilai = $this->objNilaiPenyesuaian->findAll();
-        $data['dtnilaipenyesuaian'] =$nilai;
+        $nilai = $this->objNilaiPenyesuaian->ambilrelasiid($id);
+        $data['dtnilaipenyesuaian'] = $nilai;
 
         if(is_object($penyesuaian)) {
             $data['dtakun3'] = $akun3;
@@ -179,18 +179,46 @@ class Penyesuaian extends ResourceController
         $kredit = $this->request->getVar('kredit');
         $id_status = $this->request->getVar('id_status');
 
-        foreach ($ids as $key => $value) {
-            $result[]=[
-                'id' => $ids[$key],
-                'kode_akun3'=> $kode_akun3[$key],
-                'debit'=> $debit[$key],
-                'kredit'=> $kredit[$key],
-                'id_status'=> $id_status[$key],
-            ];
+        // Hapus data lama untuk id_penyesuaian ini
+        $this->objNilaiPenyesuaian->where(['id_penyesuaian' => $id])->delete();
+
+        // Insert data baru dengan filter duplikasi
+        $data2 = [];
+        $uniqRows = [];
+        if (is_array($kode_akun3)) {
+            for ($i = 0; $i < count($kode_akun3); $i++) {
+                $kode = $kode_akun3[$i] ?? '';
+                $debitVal = $debit[$i] ?? '';
+                $kreditVal = $kredit[$i] ?? '';
+                $statusVal = $id_status[$i] ?? '';
+
+                // Skip jika semua field kosong
+                if (empty($kode) && empty($debitVal) && empty($kreditVal) && empty($statusVal)) {
+                    continue;
+                }
+
+                // Buat signature untuk deteksi duplikasi
+                $signature = implode('|', [$kode, $debitVal, $kreditVal, $statusVal]);
+                if (isset($uniqRows[$signature])) {
+                    continue; // Skip duplikat
+                }
+                $uniqRows[$signature] = true;
+
+                $data2[] = [
+                    'id_penyesuaian' => $id,
+                    'kode_akun3' => $kode,
+                    'debit' => $debitVal === '' ? 0 : $debitVal,
+                    'kredit' => $kreditVal === '' ? 0 : $kreditVal,
+                    'id_status' => $statusVal
+                ];
+            }
         }
-        $this->objNilaiPenyesuaian->updateBatch($result, 'id');
+
+        if (!empty($data2)) {
+            $this->objNilaiPenyesuaian->insertBatch($data2);
+        }
+
         return redirect()->to(site_url('penyesuaian'))->with('success', 'Data Berhasil di Update');
- 
     }
 
     /**
