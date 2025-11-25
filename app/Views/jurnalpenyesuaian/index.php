@@ -48,9 +48,18 @@
                         <?php
                         $td = 0;
                         $tk = 0;
+                        $processedAkun = []; // Track akun yang sudah diproses untuk menghindari duplikasi
                         ?>
                         <?php foreach ($dttransaksi as $key => $value) : ?>
                             <?php
+                            // Skip jika akun sudah diproses (untuk menghindari duplikasi)
+                            if (isset($processedAkun[$value->kode_akun3])) {
+                                continue;
+                            }
+                            
+                            // Tandai akun sebagai sudah diproses
+                            $processedAkun[$value->kode_akun3] = true;
+                            
                             $d = floatval($value->jumdebit ?? 0);
                             $k = floatval($value->jumkredit ?? 0);
                             

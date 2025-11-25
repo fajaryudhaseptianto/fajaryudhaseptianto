@@ -22,6 +22,44 @@ class Admin extends BaseController
         return view('admin/index', $data);
     }
 
+    public function createUser()
+    {
+        $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
+        $username = $this->request->getVar('username') ?: $email;
+
+        // Validasi
+        if (empty($email) || empty($password)) {
+            return redirect()->to(site_url('admin'))->with('error', 'Email dan password harus diisi');
+        }
+
+        // Cek apakah email sudah ada
+        $existingUser = $this->users->where('email', $email)->first();
+        if ($existingUser) {
+            return redirect()->to(site_url('admin'))->with('error', 'Email sudah terdaftar');
+        }
+
+        // Buat user baru (non-admin)
+        $userData = [
+            'email' => $email,
+            'username' => $username,
+            'password_hash' => password_hash($password, PASSWORD_DEFAULT),
+            'active' => 1,
+        ];
+
+        try {
+            $userId = $this->users->insert($userData);
+            
+            if ($userId) {
+                return redirect()->to(site_url('admin'))->with('success', 'User berhasil ditambahkan');
+            } else {
+                return redirect()->to(site_url('admin'))->with('error', 'Gagal menambahkan user');
+            }
+        } catch (\Exception $e) {
+            return redirect()->to(site_url('admin'))->with('error', 'Error: ' . $e->getMessage());
+        }
+    }
+
     /**
      * Membersihkan data duplikat di tbl_nilai dan tbl_nilaipenyesuaian
      * Hanya menyisakan satu record per kombinasi unik

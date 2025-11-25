@@ -35,6 +35,9 @@
         <div class="card">
             <div class="card-header">
                 <h4>Daftar Pengguna</h4>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">
+                    <i class="fas fa-plus"></i> Tambah User
+                </a>
             </div>
             <div class="card-body table-responsive">
                 <table class="table table-striped">
@@ -82,6 +85,41 @@
         </div>
     </div>
 </section>
+
+<!-- Modal Tambah User -->
+<div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserModalLabel">Tambah User Baru</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= site_url('admin/create-user') ?>" method="POST">
+                <?= csrf_field() ?>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" required placeholder="contoh@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Username (Opsional)</label>
+                        <input type="text" class="form-control" name="username" placeholder="Kosongkan untuk menggunakan email">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <?= $this->endSection() ?>
 

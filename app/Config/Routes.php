@@ -59,11 +59,13 @@ $routes->get('/penyesuaian/(:segment)/edit', 'penyesuaian::edit/$1');
 $routes->get('/penyesuaian/(:any)', 'Penyesuaian::show/$1');
 
 $routes->post('/jurnalumum', 'JurnalUmum::index');
+$routes->get('/posting', 'Posting::index');
 $routes->post('/posting', 'Posting::index');
 
 
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->post('/admin/create-user', 'Admin::createUser', ['filter' => 'role:admin']);
 $routes->post('/admin/clean-duplicates', 'Admin::cleanDuplicates', ['filter' => 'role:admin']);
 
 $routes->resource('akun2');

@@ -96,15 +96,15 @@ class ModelTransaksi extends Model
 
     public function get_jpenyesuaian($tglawal, $tglakhir)
     {
-        // Pastikan semua data penyesuaian terambil tanpa kehilangan akun
-        // Gunakan DISTINCT untuk menghindari duplikat dan pastikan semua data terambil
+        // Pastikan semua data penyesuaian terambil tanpa duplikasi
+        // GROUP BY hanya pada kode_akun3 untuk memastikan setiap akun hanya muncul sekali
         $sql = $this->db->table('tbl_nilaipenyesuaian')
             ->select('tbl_nilaipenyesuaian.kode_akun3, akun3s.nama_akun3')
             ->selectSum('tbl_nilaipenyesuaian.debit', 'jumdebit')
             ->selectSum('tbl_nilaipenyesuaian.kredit', 'jumkredit')
             ->join('tbl_penyesuaian', 'tbl_penyesuaian.id_penyesuaian = tbl_nilaipenyesuaian.id_penyesuaian', 'inner')
             ->join('akun3s', 'akun3s.kode_akun3 = tbl_nilaipenyesuaian.kode_akun3', 'inner')
-            ->groupBy('tbl_nilaipenyesuaian.kode_akun3, akun3s.nama_akun3')
+            ->groupBy('tbl_nilaipenyesuaian.kode_akun3, akun3s.nama_akun3') // Group by keduanya untuk menghindari duplikasi
             ->orderBy('tbl_nilaipenyesuaian.kode_akun3', 'ASC');
 
         if ($tglawal && $tglakhir) {

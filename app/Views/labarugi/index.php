@@ -42,10 +42,16 @@
                         $totbeban = 0;
                         $beban = 0;
                         $shownAkun = []; // Track akun yang sudah ditampilkan untuk menghindari duplikasi
+                        $pendapatanShown = false; // Track apakah header PENDAPATAN sudah ditampilkan
                         ?>
 
                         <?php foreach ($dttransaksi as $key => $value) : ?>
                             <?php
+                            // Hanya proses untuk pendapatan (kode_akun2 == 41)
+                            if ($value->kode_akun2 != 41) {
+                                continue;
+                            }
+                            
                             // Skip jika akun sudah ditampilkan
                             if (isset($shownAkun[$value->kode_akun3])) {
                                 continue;
@@ -54,20 +60,25 @@
                             
                             $pendapatan = $value->jumkredit + $value->jumkredits;
                             $totpendapatan = $totpendapatan + $pendapatan;
-                            ?>
-
-                            <?php if ($value->kode_akun2 == 41) : ?>
+                            
+                            // Tampilkan header PENDAPATAN hanya sekali
+                            if (!$pendapatanShown) {
+                                $pendapatanShown = true;
+                                ?>
                                 <tr>
                                     <td>PENDAPATAN</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                    <td style="padding-left:3em"><?= $value->nama_akun3; ?></td>
-                                    <td></td>
-                                    <td class="text-right"><?= number_format($pendapatan, 0, ",", ","); ?></td>
-                                </tr>
-                            <?php endif; ?>
+                                <?php
+                            }
+                            ?>
+
+                            <tr>
+                                <td style="padding-left:3em"><?= $value->nama_akun3; ?></td>
+                                <td></td>
+                                <td class="text-right"><?= number_format($pendapatan, 0, ",", ","); ?></td>
+                            </tr>
                         <?php endforeach; ?>
 
                         <tr>
@@ -77,26 +88,29 @@
                         </tr>
 
                         <?php 
-                        $shownBeban = []; // Track beban yang sudah ditampilkan
+                        $shownBeban = []; // Track beban yang sudah ditampilkan untuk menghindari duplikasi
                         foreach ($dttransaksi as $key => $value) : ?>
                             <?php 
-                            // Skip jika akun sudah ditampilkan
+                            // Hanya proses untuk beban (kode_akun2 == 51)
+                            if ($value->kode_akun2 != 51) {
+                                continue;
+                            }
+                            
+                            // Skip jika akun sudah ditampilkan (untuk menghindari duplikasi)
                             if (isset($shownBeban[$value->kode_akun3])) {
                                 continue;
                             }
                             $shownBeban[$value->kode_akun3] = true;
                             
-                            if ($value->kode_akun2 == 51) : ?>
-                                <?php
-                                $beban = $value->jumdebit + $value->jumdebits;
-                                $totbeban = $totbeban + $beban;
-                                ?>
-                                <tr>
-                                    <td style="padding-left:3em"><?= $value->nama_akun3; ?></td>
-                                    <td></td>
-                                    <td class="text-right" style="padding-right:6em"><?= number_format($beban, 0, ",", ","); ?></td>
-                                </tr>
-                            <?php endif; ?>
+                            // Pastikan hanya menghitung sekali per akun
+                            $beban = floatval($value->jumdebit ?? 0) + floatval($value->jumdebits ?? 0);
+                            $totbeban = $totbeban + $beban;
+                            ?>
+                            <tr>
+                                <td style="padding-left:3em"><?= $value->nama_akun3; ?></td>
+                                <td></td>
+                                <td class="text-right" style="padding-right:6em"><?= number_format($beban, 0, ",", ","); ?></td>
+                            </tr>
                         <?php endforeach; ?>
                         <tr>
                             <td class="text-left">TOTAL BEBAN</td>
