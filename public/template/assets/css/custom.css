@@ -7,9 +7,2577 @@
 
 /*# sourceMappingURL=custom.css.map */
 .judul{
-    background-color: darkorchid;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
     font-style: italic;
     font-weight: bold;
-    text-align: right;
-    color: aliceblue;
+    text-align: center;
+    color: #ffffff !important;
+}
+
+.judul td,
+.judul th {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Gradasi Biru - Theme Override */
+:root {
+    --primary: #007bff;
+    --primary-gradient: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%);
+    --primary-dark: #0056b3;
+    --primary-light: #66b3ff;
+}
+
+/* Navbar Background dengan Gradasi Biru */
+.navbar-bg {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+}
+
+.navbar.active {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Sidebar dengan Gradasi Biru */
+.main-sidebar {
+    background: linear-gradient(180deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+}
+
+.sidebar-brand a,
+.sidebar-brand,
+.sidebar-brand * {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    font-weight: 700 !important;
+}
+
+.sidebar-menu li a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li a:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+}
+
+.sidebar-menu li.active > a {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    box-shadow: inset 3px 0 0 #fff;
+}
+
+.sidebar-menu li.menu-header {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Button Primary dengan Gradasi Biru */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%) !important;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #004085 0%, #002752 100%) !important;
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Link dengan Warna Biru */
+a {
+    color: #007bff !important;
+}
+
+a:hover {
+    color: #0056b3 !important;
+}
+
+/* Background Primary */
+.bg-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* Text Primary */
+.text-primary,
+.text-primary-all *,
+.text-primary-all *:before,
+.text-primary-all *:after {
+    color: #007bff !important;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background: linear-gradient(90deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* Card Header dengan Gradasi Biru */
+.card-header {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 1rem 1.5rem !important;
+}
+
+.card-header * {
+    color: #ffffff !important;
+}
+
+.card-header h4 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3,
+.card-header h5,
+.card-header h6 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-header a {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-header .btn {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Badge Primary */
+.badge-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* Nav Tabs */
+ul.nav-tabs li.nav-item a.nav-link i {
+    color: #007bff !important;
+}
+
+ul.nav-tabs li.nav-item a.nav-link.active {
+    border-bottom: 2px solid #007bff !important;
+    color: #007bff !important;
+}
+
+/* Form Control Focus */
+.form-control:focus,
+.custom-select:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    color: #007bff !important;
+}
+
+/* Pagination */
+.page-item.active .page-link {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    border-color: #007bff !important;
+}
+
+.page-link {
+    color: #007bff !important;
+}
+
+.page-link:hover {
+    color: #0056b3 !important;
+}
+
+/* Alert Primary */
+.alert-primary {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 86, 179, 0.1) 100%) !important;
+    border-color: #007bff !important;
+    color: #004085 !important;
+}
+
+/* Table Hover */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.05) !important;
+}
+
+/* Statistic Card */
+.card-statistic-1 .card-icon {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* Section Header */
+.section-header {
+    border-bottom: 2px solid #007bff !important;
+}
+
+.section-header h1 {
+    color: #007bff !important;
+    font-weight: 700 !important;
+}
+
+/* ============================================
+   PERBAIKAN KONTRAST WARNA & TEXT
+   Memastikan semua text terlihat jelas
+   ============================================ */
+
+/* Button Text - Pastikan kontras tinggi */
+.btn-primary {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    color: #ffffff !important;
+}
+
+/* Navbar Text - Putih dengan kontras tinggi */
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .dropdown-toggle {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .dropdown-item:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.navbar .dropdown-item {
+    color: #0056b3 !important;
+}
+
+.navbar .dropdown-item:hover {
+    color: #007bff !important;
+    background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+/* Sidebar Text - Putih dengan kontras tinggi */
+.sidebar-menu li a {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar-menu li a i {
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+}
+
+.sidebar-menu li.menu-header {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Background BIRU dengan teks PUTIH */
+.card {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3) !important;
+}
+
+.card-body {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+    color: #ffffff !important;
+}
+
+.card-body p,
+.card-body span,
+.card-body div {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+.card-body h1,
+.card-body h2,
+.card-body h3,
+.card-body h4,
+.card-body h5,
+.card-body h6 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Form Labels - Kontras tinggi */
+.form-group label,
+label {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+.form-control,
+.custom-select {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    border-color: #ced4da !important;
+}
+
+.form-control::placeholder {
+    color: #6c757d !important;
+    opacity: 0.7 !important;
+}
+
+/* Table Text - Kontras tinggi */
+.table {
+    color: #0056b3 !important;
+}
+
+.table thead th {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.table thead td {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.table tbody td {
+    color: #0056b3 !important;
+}
+
+.table-hover tbody tr:hover td {
+    color: #004085 !important;
+    background-color: rgba(0, 123, 255, 0.08) !important;
+}
+
+/* Link - Kontras tinggi di berbagai background */
+a:not(.btn):not(.nav-link):not(.dropdown-item) {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+}
+
+a:not(.btn):not(.nav-link):not(.dropdown-item):hover {
+    color: #004085 !important;
+    text-decoration: underline !important;
+}
+
+/* Alert Text - Kontras tinggi */
+.alert {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+.alert-success {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+
+.alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+.alert-warning {
+    background-color: #fff3cd !important;
+    border-color: #ffeaa7 !important;
+    color: #856404 !important;
+}
+
+.alert-info {
+    background-color: #d1ecf1 !important;
+    border-color: #bee5eb !important;
+    color: #0c5460 !important;
+}
+
+.alert-primary {
+    background-color: #cce5ff !important;
+    border-color: #99ccff !important;
+    color: #004085 !important;
+    font-weight: 600 !important;
+}
+
+/* Badge Text - Kontras tinggi */
+.badge {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 0.35em 0.65em !important;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: #ffffff !important;
+}
+
+.badge-success {
+    background-color: #28a745 !important;
+    color: #ffffff !important;
+}
+
+.badge-danger {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+}
+
+.badge-warning {
+    background-color: #ffc107 !important;
+    color: #004085 !important;
+}
+
+.badge-info {
+    background-color: #17a2b8 !important;
+    color: #ffffff !important;
+}
+
+/* Pagination Text */
+.page-link {
+    color: #007bff !important;
+    font-weight: 500 !important;
+    background-color: #ffffff !important;
+    border-color: #dee2e6 !important;
+}
+
+.page-item.active .page-link {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    border-color: #007bff !important;
+}
+
+.page-link:hover {
+    color: #0056b3 !important;
+    background-color: #e9ecef !important;
+    border-color: #dee2e6 !important;
+}
+
+/* Statistic Card Text */
+.card-statistic-1 .card-body {
+    color: #0056b3 !important;
+}
+
+.card-statistic-1 .card-header h4 {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+.card-statistic-1 .card-body {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+/* Section Body Text */
+.section-body {
+    color: #0056b3 !important;
+}
+
+.section-body h1,
+.section-body h2,
+.section-body h3,
+.section-body h4,
+.section-body h5,
+.section-body h6 {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+}
+
+.section-body p {
+    color: #0056b3 !important;
+    line-height: 1.6 !important;
+}
+
+/* Dropdown Menu Text */
+.dropdown-menu {
+    background-color: #ffffff !important;
+    border: 1px solid #dee2e6 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.dropdown-item {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #007bff !important;
+    background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: #ffffff !important;
+    background-color: #007bff !important;
+}
+
+/* Nav Tabs Text */
+.nav-tabs .nav-link {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: #007bff !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid #007bff !important;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #0056b3 !important;
+}
+
+/* Input Group Text */
+.input-group-text {
+    background-color: #e9ecef !important;
+    color: #0056b3 !important;
+    border-color: #ced4da !important;
+    font-weight: 500 !important;
+}
+
+/* Text Muted - Lebih gelap agar terlihat */
+.text-muted {
+    color: #6c757d !important;
+    font-weight: 400 !important;
+}
+
+/* Small Text */
+small,
+.small {
+    color: #6c757d !important;
+    font-weight: 400 !important;
+}
+
+/* Strong dan Bold Text */
+strong,
+b {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* List Text */
+ul li,
+ol li {
+    color: #0056b3 !important;
+}
+
+/* Code Text */
+code {
+    color: #e83e8c !important;
+    background-color: #f8f9fa !important;
+    padding: 2px 6px !important;
+    border-radius: 3px !important;
+}
+
+/* Blockquote Text */
+blockquote {
+    color: #0056b3 !important;
+    border-left: 4px solid #007bff !important;
+    background-color: #f8f9fa !important;
+}
+
+/* Footer Text */
+.main-footer {
+    color: #6c757d !important;
+}
+
+.main-footer a {
+    color: #007bff !important;
+}
+
+.main-footer a:hover {
+    color: #0056b3 !important;
+}
+
+/* ============================================
+   PERBAIKAN KHUSUS UNTUK HALAMAN KODE AKUN, TRANSAKSI, LAPORAN KEUANGAN
+   ============================================ */
+
+/* Table Striped - Text BIRU */
+.table-striped tbody tr {
+    background-color: #ffffff !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa !important;
+}
+
+.table-striped tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+    border-color: #dee2e6 !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) td {
+    color: #0056b3 !important;
+    background-color: #f8f9fa !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) td {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+}
+
+/* Pastikan semua text dalam table - BIRU */
+.table td,
+.table th {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+.table td strong,
+.table td b {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Table Hover - Text BIRU GELAP saat hover */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+.table-hover tbody tr:hover td {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Table Header - PUTIH dengan background biru gradient */
+.table thead th,
+table thead th {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Table Header td - PUTIH dengan background biru gradient */
+.table thead td,
+table thead td {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Force semua text di dalam thead menjadi PUTIH */
+.table thead th *,
+.table thead td *,
+table thead th *,
+table thead td * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Table Body - Text PUTIH */
+.table tbody td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    padding: 0.75rem !important;
+    vertical-align: middle !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table dalam Card - Text PUTIH */
+.card .table {
+    color: #ffffff !important;
+}
+
+.card .table td,
+.card .table th {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+.card .table tbody td {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Body - Background BIRU dengan teks PUTIH */
+.card-body {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+    color: #ffffff !important;
+}
+
+.card-body *:not(.btn):not(.alert):not(.badge):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *) {
+    color: #ffffff !important;
+}
+
+.card-body h1,
+.card-body h2,
+.card-body h3,
+.card-body h4,
+.card-body h5,
+.card-body h6 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-body p,
+.card-body span,
+.card-body div {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+/* Label di dalam card tetap putih */
+.card-body label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Form dalam Card - Background putih dengan teks biru untuk readability */
+.card-body .form-control,
+.card-body .custom-select {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    font-weight: 500 !important;
+}
+
+.card-body .form-control:focus,
+.card-body .custom-select:focus {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5) !important;
+    color: #0056b3 !important;
+}
+
+.card-body .form-group label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-body .form-control::placeholder {
+    color: #6c757d !important;
+    opacity: 0.8 !important;
+}
+
+/* Input Date dalam Card - Background putih dengan teks biru */
+.card-body input[type="date"] {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+.card-body input[type="date"]:focus {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Label dan text di dalam form card-body - PUTIH */
+.card-body .row label,
+.card-body form label,
+.card-body .form-group label,
+.card-body .col label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Text di dalam row di card-body - PUTIH */
+.card-body .row,
+.card-body form,
+.card-body .form-group {
+    color: #ffffff !important;
+}
+
+.card-body .row *:not(.btn):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(input):not(select) {
+    color: #ffffff !important;
+}
+
+/* Button dalam Card - Pastikan text terlihat */
+.card-body .btn {
+    font-weight: 600 !important;
+}
+
+.card-body .btn-primary {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-body .btn-info {
+    color: #ffffff !important;
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+}
+
+.card-body .btn-warning {
+    color: #212529 !important;
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+    font-weight: 600 !important;
+}
+
+.card-body .btn-danger {
+    color: #ffffff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.card-body .btn-success {
+    color: #ffffff !important;
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+/* Link dalam Card */
+.card-body a:not(.btn) {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+.card-body a:not(.btn):hover {
+    color: #004085 !important;
+    text-decoration: underline !important;
+}
+
+/* Section Body - Text PUTIH (kecuali h2 dan h5 di home) */
+.section-body {
+    color: #ffffff !important;
+}
+
+.section-body *:not(.btn):not(.alert):not(.badge):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(input):not(select):not(option) {
+    color: #ffffff !important;
+}
+
+.section-body h1,
+.section-body h3,
+.section-body h4,
+.section-body h6 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* H2 dan H5 di section-body menjadi BIRU */
+.section-body h2,
+.section-body h5 {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* Table Text Right - BIRU */
+.text-right {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Table Text Left - BIRU */
+.text-left {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Table Text Center - BIRU */
+.text-center {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Table Footer - Text PUTIH */
+.table tfoot td {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    border-top: 2px solid rgba(255, 255, 255, 0.2) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Number Format - Text BIRU GELAP */
+table td.text-right {
+    color: #004085 !important;
+    font-weight: 700 !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* Form Row dalam Card - Text PUTIH */
+.card-body .row {
+    color: #ffffff !important;
+}
+
+.card-body .row *:not(.btn):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *) {
+    color: #ffffff !important;
+}
+
+/* Input Date dalam Card - Background putih dengan teks biru */
+.card-body input[type="date"] {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    font-weight: 600 !important;
+}
+
+.card-body input[type="date"]:focus {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Alert dalam Card - Pastikan text terlihat */
+.card-body .alert {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+.card-body .alert-success {
+    background-color: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+
+.card-body .alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+/* Icon dalam Button - Pastikan terlihat */
+.btn i,
+.btn .fas,
+.btn .far,
+.btn .fab,
+.btn .fal {
+    color: inherit !important;
+}
+
+.btn-warning i {
+    color: #212529 !important;
+}
+
+.btn-primary i,
+.btn-info i,
+.btn-danger i,
+.btn-success i {
+    color: #ffffff !important;
+}
+
+/* Table dengan padding khusus - Text BIRU */
+table td[style*="padding-left"] {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+table td[style*="padding-right"] {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Override untuk semua text di dalam section - BIRU */
+.section .card,
+.section .card-body,
+.section .table,
+.section .form-control,
+.section label {
+    color: #0056b3 !important;
+}
+
+.section label {
+    color: #004085 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua heading - BIRU GELAP */
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section h5,
+.section h6 {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Pastikan semua paragraph - BIRU */
+.section p {
+    color: #0056b3 !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
+}
+
+/* Pastikan semua span - BIRU */
+.section span {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+/* Pastikan semua div - BIRU */
+.section div {
+    color: #0056b3 !important;
+}
+
+/* ============================================
+   OVERRIDE GLOBAL - Memastikan semua text terlihat
+   ============================================ */
+
+/* Force semua text di dalam card body menjadi PUTIH (kecuali table, form, alert, button) */
+.card-body,
+.card-body *:not(.btn):not(.alert):not(.badge):not(a.btn):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *) {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+/* Exception untuk button dan alert */
+.card-body .btn-primary,
+.card-body .btn-info,
+.card-body .btn-danger,
+.card-body .btn-success {
+    color: #ffffff !important;
+}
+
+.card-body .btn-warning {
+    color: #212529 !important;
+}
+
+/* Force semua text di dalam table menjadi BIRU */
+.table,
+.table *:not(.btn):not(.badge):not(.judul):not(.judul *) {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Force semua text di dalam form menjadi BIRU */
+.form-control,
+.form-control * {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+label,
+.form-group label {
+    color: #004085 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan number format - BIRU GELAP */
+table td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+table td.text-right {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Pastikan semua heading di section - BIRU GELAP */
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Pastikan semua paragraph - BIRU */
+section p {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+/* Pastikan semua list item - BIRU */
+section li {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+/* Pastikan semua span - BIRU */
+section span {
+    color: #0056b3 !important;
+    font-weight: 500 !important;
+}
+
+/* ============================================
+   PERBAIKAN KHUSUS UNTUK LAPORAN KEUANGAN
+   Memastikan semua text di table terlihat
+   ============================================ */
+
+/* Table tanpa thead - Text PUTIH */
+.table:not(:has(thead)) tbody td,
+.table tbody td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table row - Text PUTIH */
+.table tbody tr td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table dengan class judul di thead */
+.table thead.judul td,
+.table thead.judul th,
+table thead.judul td,
+table thead.judul th {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force semua text di dalam thead.judul menjadi PUTIH */
+.table thead.judul td *,
+.table thead.judul th *,
+table thead.judul td *,
+table thead.judul th * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Table dengan class judul di tfoot */
+.table tfoot.judul td,
+.table tfoot.judul th {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Pastikan semua td di table body - Text PUTIH */
+.table tbody td,
+.table tbody tr td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Text dalam table - Force PUTIH */
+.table td,
+.table tbody td,
+.table tbody tr td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Text right dalam table - PUTIH */
+.table td.text-right,
+.table tbody td.text-right {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Text left dalam table - PUTIH */
+.table td.text-left,
+.table tbody td.text-left {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Text center dalam table - PUTIH */
+.table td.text-center,
+.table tbody td.text-center {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Table tfoot - Text PUTIH */
+.table tfoot td {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Table tfoot dengan judul - Putih */
+.table tfoot.judul td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* Table striped - Text BIRU */
+.table-striped tbody tr:nth-of-type(odd) td {
+    color: #0056b3 !important;
+    background-color: #f8f9fa !important;
+    font-weight: 600 !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) td {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Table hover - Text BIRU GELAP saat hover */
+.table-hover tbody tr:hover td {
+    color: #004085 !important;
+    font-weight: 700 !important;
+    background-color: rgba(0, 123, 255, 0.1) !important;
+}
+
+/* Force semua text di dalam table menjadi BIRU */
+.section-body .table,
+.section-body .table *:not(.judul):not(.judul *) {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Exception untuk judul */
+.section-body .table .judul,
+.section-body .table .judul * {
+    color: #ffffff !important;
+}
+
+/* Pastikan number format - BIRU */
+table td.text-right {
+    color: #004085 !important;
+    font-weight: 700 !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* Pastikan semua cell kosong tetap terlihat border */
+.table td:empty {
+    border-color: #dee2e6 !important;
+}
+
+/* Pastikan semua text di card body table - BIRU */
+.card-body .table td,
+.card-body .table tbody td,
+.card-body .table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di section body table - BIRU */
+.section-body .table td,
+.section-body .table tbody td,
+.section-body .table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Override untuk semua elemen di dalam table - BIRU */
+table td,
+table tbody td,
+table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+table tfoot td {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Pastikan semua text di section body - BIRU */
+.section-body {
+    color: #0056b3 !important;
+}
+
+.section-body *:not(.btn):not(.alert):not(.badge) {
+    color: #0056b3 !important;
+}
+
+.section-body h1,
+.section-body h2,
+.section-body h3,
+.section-body h4,
+.section-body h5,
+.section-body h6 {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+}
+
+/* Exception untuk judul */
+table thead.judul td,
+table thead.judul th,
+table tfoot.judul td,
+table tfoot.judul th {
+    color: #ffffff !important;
+}
+
+/* ============================================
+   OVERRIDE SANGAT KUAT UNTUK LAPORAN KEUANGAN
+   Memastikan TIDAK ADA text putih yang tidak terlihat
+   ============================================ */
+
+/* Force semua text di table menjadi BIRU - PRIORITAS TINGGI */
+section .table tbody td,
+section .table tbody tr td,
+section .card-body .table tbody td,
+section .card-body .table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Force semua text di table body - BIRU */
+.table tbody tr td:not(.judul):not(.judul *) {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Force semua text di table tfoot - PUTIH (override biru gelap) */
+.table tfoot tr td:not(.judul):not(.judul *),
+.table tfoot tr td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Pastikan semua cell table memiliki warna BIRU */
+table td:not(.judul):not(.judul *) {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di dalam section body - BIRU */
+.section-body table td,
+.section-body table tbody td,
+.section-body table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di dalam card body table - BIRU */
+.card-body table td,
+.card-body table tbody td,
+.card-body table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di dalam table responsive - BIRU */
+.table-responsive table td,
+.table-responsive table tbody td,
+.table-responsive table tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di dalam table hover - BIRU GELAP */
+.table-hover tbody tr td {
+    color: #0056b3 !important;
+}
+
+.table-hover tbody tr:hover td {
+    color: #004085 !important;
+    font-weight: 700 !important;
+}
+
+/* Pastikan semua text di dalam table striped - BIRU */
+.table-striped tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di dalam table md - BIRU */
+.table-md tbody tr td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* Pastikan semua text di dalam table - GLOBAL OVERRIDE BIRU */
+.section .table td,
+.section .table tbody td,
+.section .table tbody tr td,
+.section .table tfoot td {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+.section .table tfoot td {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Exception hanya untuk judul */
+.section .table .judul td,
+.section .table .judul th,
+.section .table thead.judul td,
+.section .table thead.judul th,
+.section .table tfoot.judul td,
+.section .table tfoot.judul th {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+}
+
+/* ============================================
+   STYLING KHUSUS UNTUK MENU KODE AKUN
+   ============================================ */
+
+/* Menu dropdown di sidebar - Akun 1, 2, 3 menjadi BIRU - OVERRIDE STRONG */
+.sidebar-menu .nav-item.dropdown .dropdown-menu li a.nav-link,
+.sidebar-menu .dropdown-menu li a.nav-link,
+.sidebar-menu ul.dropdown-menu li a.nav-link,
+.sidebar-menu li.dropdown ul.dropdown-menu li a.nav-link,
+.sidebar-menu .nav-item.dropdown ul.dropdown-menu li a.nav-link {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    background-color: transparent !important;
+}
+
+/* Exception untuk dropdown menu - override sidebar-menu li a */
+.sidebar-menu li.dropdown ul.dropdown-menu li a,
+.sidebar-menu .nav-item.dropdown ul.dropdown-menu li a {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+.sidebar-menu .nav-item.dropdown .dropdown-menu li a.nav-link:hover,
+.sidebar-menu .dropdown-menu li a.nav-link:hover,
+.sidebar-menu ul.dropdown-menu li a.nav-link:hover,
+.sidebar-menu li.dropdown ul.dropdown-menu li a.nav-link:hover,
+.sidebar-menu .nav-item.dropdown ul.dropdown-menu li a.nav-link:hover {
+    color: #004085 !important;
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    font-weight: 700 !important;
+}
+
+.sidebar-menu li.dropdown ul.dropdown-menu li a:hover,
+.sidebar-menu .nav-item.dropdown ul.dropdown-menu li a:hover {
+    color: #004085 !important;
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    font-weight: 700 !important;
+}
+
+/* Pastikan card header h4 tetap PUTIH - OVERRIDE STRONG */
+.card-header h4,
+.card-header h4 * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Pastikan semua table header (th dan td) menjadi PUTIH - OVERRIDE STRONG */
+.table thead th,
+.table thead td,
+table thead th,
+table thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Exception untuk card-statistic */
+.card-statistic-1 .card-header h4 {
+    color: #0056b3 !important;
+    font-weight: 600 !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Memastikan table header PUTIH
+   ============================================ */
+
+/* Force semua table header menjadi PUTIH - PRIORITAS TINGGI */
+.section .table thead th,
+.section .table thead td,
+.section-body .table thead th,
+.section-body .table thead td,
+.card-body .table thead th,
+.card-body .table thead td,
+.table-responsive .table thead th,
+.table-responsive .table thead td,
+.table.table-bordered thead th,
+.table.table-bordered thead td,
+.box-body .table thead th,
+.box-body .table thead td,
+.section-body .box-body .table thead th,
+.section-body .box-body .table thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Force card-header h4 menjadi PUTIH - PRIORITAS TINGGI */
+.section .card-header h4,
+.section-body .card-header h4,
+.card-body .card-header h4 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   STYLING TOMBOL DELETE - PUTIH
+   ============================================ */
+
+/* Pastikan semua tombol Delete (btn-danger) memiliki teks PUTIH */
+.btn-danger,
+.btn-danger *,
+button.btn-danger,
+button.btn-danger *,
+a.btn-danger,
+a.btn-danger * {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Override untuk semua konteks */
+.section .btn-danger,
+.section-body .btn-danger,
+.card-body .btn-danger,
+.table .btn-danger,
+tbody .btn-danger,
+td .btn-danger {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Icon di dalam tombol Delete juga putih */
+.btn-danger i,
+.btn-danger .fas,
+.btn-danger .far,
+.btn-danger .fal {
+    color: #ffffff !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Card Background BIRU dengan Teks PUTIH
+   ============================================ */
+
+/* Force semua card memiliki background biru */
+.card {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+    color: #ffffff !important;
+}
+
+/* Force semua teks di card-body menjadi PUTIH (kecuali table dan form) */
+.section .card-body,
+.section-body .card-body {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 50%, #004085 100%) !important;
+    color: #ffffff !important;
+}
+
+.section .card-body *:not(.btn):not(.alert):not(.badge):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(.form-control::placeholder),
+.section-body .card-body *:not(.btn):not(.alert):not(.badge):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(.form-control::placeholder) {
+    color: #ffffff !important;
+}
+
+/* Heading di card-body tetap putih */
+.section .card-body h1,
+.section .card-body h2,
+.section .card-body h3,
+.section .card-body h4,
+.section .card-body h5,
+.section .card-body h6,
+.section-body .card-body h1,
+.section-body .card-body h2,
+.section-body .card-body h3,
+.section-body .card-body h4,
+.section-body .card-body h5,
+.section-body .card-body h6 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Table di dalam card - Teks PUTIH */
+.card-body .table,
+.card-body .table tbody td,
+.card-body .table tbody tr td {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Exception: Form controls tetap putih background dengan teks biru */
+.card-body .form-control,
+.card-body .custom-select {
+    background-color: #ffffff !important;
+    color: #0056b3 !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Data Akun 1 dan Header Tabel PUTIH
+   ============================================ */
+
+/* Force "Data Akun 1/2/3" di card-header menjadi PUTIH - PRIORITAS TINGGI */
+.card-header h4,
+.card .card-header h4,
+.section .card-header h4,
+.section-body .card-header h4 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Force semua header tabel (NO, KODE AKUN 1, NAMA AKUN, ACTION) menjadi PUTIH - PRIORITAS TINGGI */
+table thead th,
+table thead td,
+.table thead th,
+.table thead td,
+.section table thead th,
+.section table thead td,
+.section-body table thead th,
+.section-body table thead td,
+.card-body table thead th,
+.card-body table thead td,
+.table-responsive table thead th,
+.table-responsive table thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force semua text di dalam thead menjadi PUTIH */
+table thead th *,
+table thead td *,
+.table thead th *,
+.table thead td * {
+    color: #ffffff !important;
+}
+
+/* Force semua header tabel (NO, NAMA AKUN 1, NAMA AKUN 2, KODE AKUN 3, NAMA AKUN 3, ACTION) menjadi PUTIH */
+table thead th,
+table thead td,
+.table thead th,
+.table thead td,
+table.table-striped thead th,
+table.table-striped thead td,
+.table.table-striped thead th,
+.table.table-striped thead td,
+table.table-md thead th,
+table.table-md thead td,
+.table.table-md thead th,
+.table.table-md thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Semua Teks di Table Body PUTIH
+   ============================================ */
+
+/* Force semua teks di table body menjadi PUTIH - PRIORITAS TINGGI */
+table tbody td,
+table tbody tr td,
+.table tbody td,
+.table tbody tr td,
+.section table tbody td,
+.section table tbody tr td,
+.section-body table tbody td,
+.section-body table tbody tr td,
+.card-body table tbody td,
+.card-body table tbody tr td,
+.table-responsive table tbody td,
+.table-responsive table tbody tr td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Force semua td di table menjadi PUTIH */
+table td,
+.table td,
+.section table td,
+.section-body table td,
+.card-body table td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Force text alignment classes menjadi PUTIH */
+table td.text-right,
+table td.text-left,
+table td.text-center,
+.table td.text-right,
+.table td.text-left,
+.table td.text-center,
+table tbody td.text-right,
+table tbody td.text-left,
+table tbody td.text-center,
+.table tbody td.text-right,
+.table tbody td.text-left,
+.table tbody td.text-center {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Header Tabel (NO, NAMA AKUN, ACTION) PUTIH
+   ============================================ */
+
+/* Force semua header tabel menjadi PUTIH - PRIORITAS TINGGI */
+.section table thead th,
+.section table thead td,
+.section-body table thead th,
+.section-body table thead td,
+.card-body table thead th,
+.card-body table thead td,
+.table-responsive table thead th,
+.table-responsive table thead td,
+table.table-striped thead th,
+table.table-striped thead td,
+.table.table-striped thead th,
+.table.table-striped thead td,
+table.table-md thead th,
+table.table-md thead td,
+.table.table-md thead th,
+.table.table-md thead td,
+#myTable thead th,
+#myTable thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* ============================================
+   OVERRIDE KHUSUS - Header Tabel dengan Class JUDUL (Jurnal Penyesuaian)
+   ============================================ */
+
+/* Force header tabel dengan class judul menjadi PUTIH - PRIORITAS SANGAT TINGGI */
+table thead.judul th,
+table thead.judul td,
+.table thead.judul th,
+.table thead.judul td,
+.section table thead.judul th,
+.section table thead.judul td,
+.section-body table thead.judul th,
+.section-body table thead.judul td,
+.card-body table thead.judul th,
+.card-body table thead.judul td,
+.table-responsive table thead.judul th,
+.table-responsive table thead.judul td,
+table.table-striped thead.judul th,
+table.table-striped thead.judul td,
+.table.table-striped thead.judul th,
+.table.table-striped thead.judul td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force semua text di dalam thead.judul menjadi PUTIH */
+table thead.judul th *,
+table thead.judul td *,
+.table thead.judul th *,
+.table thead.judul td *,
+.section table thead.judul th *,
+.section table thead.judul td *,
+.section-body table thead.judul th *,
+.section-body table thead.judul td *,
+.card-body table thead.judul th *,
+.card-body table thead.judul td * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE SANGAT KUAT - Header Tabel JUDUL PUTIH
+   Untuk Jurnal Penyesuaian (KODE, KETERANGAN, DEBIT, KREDIT)
+   ============================================ */
+
+/* Force header tabel dengan class judul menjadi PUTIH - PRIORITAS SANGAT TINGGI */
+table.table-striped thead.judul td,
+table.table-striped thead.judul th,
+.table.table-striped thead.judul td,
+.table.table-striped thead.judul th,
+table.table-md thead.judul td,
+table.table-md thead.judul th,
+.table.table-md thead.judul td,
+.table.table-md thead.judul th,
+.section table.table-striped thead.judul td,
+.section table.table-striped thead.judul th,
+.section-body table.table-striped thead.judul td,
+.section-body table.table-striped thead.judul th,
+.card-body table.table-striped thead.judul td,
+.card-body table.table-striped thead.judul th,
+.table-responsive table.table-striped thead.judul td,
+.table-responsive table.table-striped thead.judul th {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force semua text di dalam thead.judul (termasuk text-center) menjadi PUTIH */
+table.table-striped thead.judul td *,
+table.table-striped thead.judul th *,
+.table.table-striped thead.judul td *,
+.table.table-striped thead.judul th *,
+table.table-md thead.judul td *,
+table.table-md thead.judul th *,
+.table.table-md thead.judul td *,
+.table.table-md thead.judul th *,
+table thead.judul td.text-center,
+table thead.judul th.text-center,
+.table thead.judul td.text-center,
+.table thead.judul th.text-center {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE KHUSUS - Teks di dalam Tabel (TBODY) PUTIH
+   Termasuk untuk Jurnal Penyesuaian
+   ============================================ */
+
+/* Force semua teks di tbody menjadi PUTIH - PRIORITAS SANGAT TINGGI */
+table tbody td,
+table tbody tr td,
+.table tbody td,
+.table tbody tr td,
+.section table tbody td,
+.section table tbody tr td,
+.section-body table tbody td,
+.section-body table tbody tr td,
+.card-body table tbody td,
+.card-body table tbody tr td,
+.table-responsive table tbody td,
+.table-responsive table tbody tr td,
+table.table-striped tbody td,
+table.table-striped tbody tr td,
+.table.table-striped tbody td,
+.table.table-striped tbody tr td,
+table.table-md tbody td,
+table.table-md tbody tr td,
+.table.table-md tbody td,
+.table.table-md tbody tr td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Force text alignment di tbody menjadi PUTIH */
+table tbody td.text-right,
+table tbody td.text-left,
+table tbody td.text-center,
+.table tbody td.text-right,
+.table tbody td.text-left,
+.table tbody td.text-center,
+.section table tbody td.text-right,
+.section table tbody td.text-left,
+.section table tbody td.text-center,
+.section-body table tbody td.text-right,
+.section-body table tbody td.text-left,
+.section-body table tbody td.text-center,
+.card-body table tbody td.text-right,
+.card-body table tbody td.text-left,
+.card-body table tbody td.text-center {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Force semua td di table menjadi PUTIH */
+table td,
+.table td,
+.section table td,
+.section-body table td,
+.card-body table td,
+.table-responsive table td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Semua Teks di Area Form dan Table PUTIH
+   Untuk Jurnal Umum dan halaman lainnya
+   ============================================ */
+
+/* Force semua text di card-body form menjadi PUTIH */
+.card-body form,
+.card-body form *:not(.btn):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(input):not(select):not(option) {
+    color: #ffffff !important;
+}
+
+/* Force label dan text di form menjadi PUTIH */
+.card-body .row,
+.card-body .row *:not(.btn):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(input):not(select):not(option),
+.card-body .col,
+.card-body .col *:not(.btn):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(input):not(select):not(option) {
+    color: #ffffff !important;
+}
+
+/* Force semua text di section-body menjadi PUTIH (kecuali table dan form controls) */
+.section-body,
+.section-body *:not(.btn):not(.alert):not(.badge):not(.table):not(.table *):not(.form-control):not(.custom-select):not(.form-control *):not(input):not(select):not(option) {
+    color: #ffffff !important;
+}
+
+/* ============================================
+   OVERRIDE SANGAT KUAT - Memastikan Semua Teks PUTIH
+   PRIORITAS TERTINGGI - HARUS DITEMPATKAN DI AKHIR
+   ============================================ */
+
+/* Force SEMUA teks di card-body menjadi PUTIH - OVERRIDE SEMUA */
+.section-body .card-body,
+.section-body .card-body *,
+.section .card-body,
+.section .card-body * {
+    color: #ffffff !important;
+}
+
+/* Exception hanya untuk form controls dan table */
+.section-body .card-body .form-control,
+.section-body .card-body .custom-select,
+.section-body .card-body input,
+.section-body .card-body select,
+.section-body .card-body .table,
+.section-body .card-body .table * {
+    /* Biarkan form controls dan table dengan styling mereka sendiri */
+}
+
+/* Force SEMUA teks di table menjadi PUTIH - OVERRIDE SEMUA */
+.section-body .card-body .table thead th,
+.section-body .card-body .table thead td,
+.section-body .card-body .table tbody td,
+.section-body .card-body .table tbody tr td,
+.section .card-body .table thead th,
+.section .card-body .table thead td,
+.section .card-body .table tbody td,
+.section .card-body .table tbody tr td {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.section-body .card-body .table thead th,
+.section-body .card-body .table thead td,
+.section .card-body .table thead th,
+.section .card-body .table thead td {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force SEMUA teks di form menjadi PUTIH - OVERRIDE SEMUA */
+.section-body .card-body form,
+.section-body .card-body form *,
+.section-body .card-body .row,
+.section-body .card-body .row *,
+.section-body .card-body .col,
+.section-body .card-body .col *,
+.section .card-body form,
+.section .card-body form *,
+.section .card-body .row,
+.section .card-body .row *,
+.section .card-body .col,
+.section .card-body .col * {
+    color: #ffffff !important;
+}
+
+/* Exception untuk form controls */
+.section-body .card-body form input[type="date"],
+.section-body .card-body form .form-control,
+.section-body .card-body form .custom-select,
+.section .card-body form input[type="date"],
+.section .card-body form .form-control,
+.section .card-body form .custom-select {
+    color: #0056b3 !important;
+    background-color: #ffffff !important;
+}
+
+/* ============================================
+   OVERRIDE KHUSUS - Header Tabel Jurnal Umum PUTIH
+   TANGGAL, KETERANGAN, REF, DEBIT, KREDIT
+   ============================================ */
+
+/* Force header tabel di Jurnal Umum menjadi PUTIH - PRIORITAS SANGAT TINGGI */
+.section-body .card-body .table.table-striped thead th,
+.section-body .card-body .table.table-striped thead td,
+.section-body .card-body .table.table-md thead th,
+.section-body .card-body .table.table-md thead td,
+.section .card-body .table.table-striped thead th,
+.section .card-body .table.table-striped thead td,
+.section .card-body .table.table-md thead th,
+.section .card-body .table.table-md thead td,
+.section-body .table-responsive .table.table-striped thead th,
+.section-body .table-responsive .table.table-striped thead td,
+.section-body .table-responsive .table.table-md thead th,
+.section-body .table-responsive .table.table-md thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force semua text di dalam thead menjadi PUTIH */
+.section-body .card-body .table.table-striped thead th *,
+.section-body .card-body .table.table-striped thead td *,
+.section-body .card-body .table.table-md thead th *,
+.section-body .card-body .table.table-md thead td *,
+.section .card-body .table.table-striped thead th *,
+.section .card-body .table.table-striped thead td *,
+.section .card-body .table.table-md thead th *,
+.section .card-body .table.table-md thead td * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL SANGAT KUAT - Header Tabel PUTIH
+   HARUS DITEMPATKAN DI AKHIR FILE - PRIORITAS TERTINGGI
+   ============================================ */
+
+/* Force SEMUA header tabel menjadi PUTIH - OVERRIDE SEMUA CSS LAIN */
+table thead th,
+table thead td,
+.table thead th,
+.table thead td,
+table.table-striped thead th,
+table.table-striped thead td,
+.table.table-striped thead th,
+.table.table-striped thead td,
+table.table-md thead th,
+table.table-md thead td,
+.table.table-md thead th,
+.table.table-md thead td,
+.section table thead th,
+.section table thead td,
+.section-body table thead th,
+.section-body table thead td,
+.card-body table thead th,
+.card-body table thead td,
+.table-responsive table thead th,
+.table-responsive table thead td,
+.section .card-body table thead th,
+.section .card-body table thead td,
+.section-body .card-body table thead th,
+.section-body .card-body table thead td,
+.section-body .card-body .table thead th,
+.section-body .card-body .table thead td,
+.section-body .card-body .table.table-striped thead th,
+.section-body .card-body .table.table-striped thead td,
+.section-body .card-body .table.table-md thead th,
+.section-body .card-body .table.table-md thead td,
+.section-body .table-responsive .table thead th,
+.section-body .table-responsive .table thead td,
+.section-body .table-responsive .table.table-striped thead th,
+.section-body .table-responsive .table.table-striped thead td,
+.section-body .table-responsive .table.table-md thead th,
+.section-body .table-responsive .table.table-md thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force SEMUA text di dalam thead menjadi PUTIH */
+table thead th *,
+table thead td *,
+.table thead th *,
+.table thead td *,
+table.table-striped thead th *,
+table.table-striped thead td *,
+.table.table-striped thead th *,
+.table.table-striped thead td *,
+table.table-md thead th *,
+table.table-md thead td *,
+.table.table-md thead th *,
+.table.table-md thead td *,
+.section table thead th *,
+.section table thead td *,
+.section-body table thead th *,
+.section-body table thead td *,
+.card-body table thead th *,
+.card-body table thead td *,
+.section-body .card-body table thead th *,
+.section-body .card-body table thead td *,
+.section-body .card-body .table thead th *,
+.section-body .card-body .table thead td * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE SANGAT SPESIFIK - Jurnal Umum
+   Struktur: section > section-body > card-body > table-responsive > table.table-striped.table-md > thead > th
+   ============================================ */
+
+/* Force header tabel Jurnal Umum menjadi PUTIH - SELECTOR SANGAT SPESIFIK */
+.section .section-body .card-body .table-responsive .table.table-striped.table-md thead th,
+.section .section-body .card-body .table-responsive .table.table-striped.table-md thead td,
+.section .section-body .card-body .table-responsive .table.table-striped thead th,
+.section .section-body .card-body .table-responsive .table.table-striped thead td,
+.section .section-body .card-body .table-responsive .table.table-md thead th,
+.section .section-body .card-body .table-responsive .table.table-md thead td,
+.section .section-body .card-body .table.table-striped.table-md thead th,
+.section .section-body .card-body .table.table-striped.table-md thead td,
+.section .section-body .card-body .table.table-striped thead th,
+.section .section-body .card-body .table.table-striped thead td,
+.section .section-body .card-body .table.table-md thead th,
+.section .section-body .card-body .table.table-md thead td,
+.section-body .card-body .table-responsive .table.table-striped.table-md thead th,
+.section-body .card-body .table-responsive .table.table-striped.table-md thead td,
+.section-body .card-body .table-responsive .table.table-striped thead th,
+.section-body .card-body .table-responsive .table.table-striped thead td,
+.section-body .card-body .table-responsive .table.table-md thead th,
+.section-body .card-body .table-responsive .table.table-md thead td,
+.section-body .card-body .table.table-striped.table-md thead th,
+.section-body .card-body .table.table-striped.table-md thead td,
+.section-body .card-body .table.table-striped thead th,
+.section-body .card-body .table.table-striped thead td,
+.section-body .card-body .table.table-md thead th,
+.section-body .card-body .table.table-md thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Force semua text di dalam thead Jurnal Umum menjadi PUTIH */
+.section .section-body .card-body .table-responsive .table.table-striped.table-md thead th *,
+.section .section-body .card-body .table-responsive .table.table-striped.table-md thead td *,
+.section-body .card-body .table-responsive .table.table-striped.table-md thead th *,
+.section-body .card-body .table-responsive .table.table-striped.table-md thead td * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE UNIVERSAL FINAL - SEMUA HEADER TABEL PUTIH
+   OVERRIDE SEMUA CSS LAIN - HARUS DI AKHIR FILE
+   ============================================ */
+
+/* Universal override untuk SEMUA header tabel - OVERRIDE SEMUA */
+th,
+thead th,
+thead td,
+table th,
+table thead th,
+table thead td,
+.table th,
+.table thead th,
+.table thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    text-transform: uppercase !important;
+}
+
+/* Universal override untuk semua text di dalam thead */
+thead th,
+thead td,
+table thead th,
+table thead td,
+.table thead th,
+.table thead td,
+th,
+table th,
+.table th {
+    color: #ffffff !important;
+}
+
+thead th *,
+thead td *,
+table thead th *,
+table thead td *,
+.table thead th *,
+.table thead td *,
+th *,
+table th *,
+.table th * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE UNIVERSAL FINAL - SEMUA TFOOT PUTIH
+   Untuk jumlah di Neraca Saldo dan laporan lainnya
+   ============================================ */
+
+/* Universal override untuk SEMUA tfoot - OVERRIDE SEMUA */
+tfoot td,
+tfoot th,
+table tfoot td,
+table tfoot th,
+.table tfoot td,
+.table tfoot th,
+tfoot.judul td,
+tfoot.judul th,
+table tfoot.judul td,
+table tfoot.judul th,
+.table tfoot.judul td,
+.table tfoot.judul th {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Force semua text di dalam tfoot menjadi PUTIH */
+tfoot td *,
+tfoot th *,
+table tfoot td *,
+table tfoot th *,
+.table tfoot td *,
+.table tfoot th *,
+tfoot.judul td *,
+tfoot.judul th *,
+table tfoot.judul td *,
+table tfoot.judul th *,
+.table tfoot.judul td *,
+.table tfoot.judul th * {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Override khusus untuk tfoot di berbagai konteks */
+.section tfoot td,
+.section tfoot th,
+.section-body tfoot td,
+.section-body tfoot th,
+.card-body tfoot td,
+.card-body tfoot th,
+.section .card-body tfoot td,
+.section .card-body tfoot th,
+.section-body .card-body tfoot td,
+.section-body .card-body tfoot th,
+.section-body .card-body .table tfoot td,
+.section-body .card-body .table tfoot th,
+.section-body .card-body .table tfoot.judul td,
+.section-body .card-body .table tfoot.judul th,
+.section-body .table-responsive .table tfoot td,
+.section-body .table-responsive .table tfoot th,
+.section-body .table-responsive .table tfoot.judul td,
+.section-body .table-responsive .table tfoot.judul th {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Force text-right di tfoot menjadi PUTIH */
+tfoot td.text-right,
+tfoot th.text-right,
+table tfoot td.text-right,
+table tfoot th.text-right,
+.table tfoot td.text-right,
+.table tfoot th.text-right,
+tfoot.judul td.text-right,
+table tfoot.judul td.text-right,
+.table tfoot.judul td.text-right {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Force text-left di tfoot menjadi PUTIH (untuk LABA RUGI) */
+tfoot td.text-left,
+tfoot th.text-left,
+table tfoot td.text-left,
+table tfoot th.text-left,
+.table tfoot td.text-left,
+.table tfoot th.text-left,
+tfoot.judul td.text-left,
+table tfoot.judul td.text-left,
+.table tfoot.judul td.text-left {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Semua Jumlah di Tabel PUTIH
+   Termasuk di tbody dan tfoot
+   ============================================ */
+
+/* Force semua text-right (jumlah) di tbody dan tfoot menjadi PUTIH */
+tbody td.text-right,
+tbody th.text-right,
+table tbody td.text-right,
+table tbody th.text-right,
+.table tbody td.text-right,
+.table tbody th.text-right,
+tfoot td.text-right,
+tfoot th.text-right,
+table tfoot td.text-right,
+table tfoot th.text-right,
+.table tfoot td.text-right,
+.table tfoot th.text-right,
+.section-body .card-body .table tbody td.text-right,
+.section-body .card-body .table tfoot td.text-right,
+.section-body .card-body .table tfoot.judul td.text-right {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - Sidebar Brand "AKUNTANSI WEB" PUTIH
+   ============================================ */
+
+/* Force "AKUNTANSI WEB" di sidebar menjadi PUTIH - PRIORITAS TINGGI */
+.sidebar-brand,
+.sidebar-brand a,
+.sidebar-brand *,
+.main-sidebar .sidebar-brand,
+.main-sidebar .sidebar-brand a,
+.main-sidebar .sidebar-brand *,
+#sidebar-wrapper .sidebar-brand,
+#sidebar-wrapper .sidebar-brand a,
+#sidebar-wrapper .sidebar-brand * {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+    font-weight: 700 !important;
+}
+
+/* ============================================
+   OVERRIDE - H2 dan H5 di Home menjadi BIRU
+   Sistem Informasi Akuntansi - AKN
+   Sekolah Vokasi IPB
+   ============================================ */
+
+/* Force h2 dan h5 di section-body menjadi BIRU - PRIORITAS TINGGI */
+.section-body h2,
+.section-body h5,
+.section .section-body h2,
+.section .section-body h5,
+.section-body h2 *,
+.section-body h5 *,
+section.section .section-body h2,
+section.section .section-body h5,
+.section .section-body h2:not(.text-white):not(.text-danger):not(.text-success):not(.text-warning),
+.section .section-body h5:not(.text-white):not(.text-danger):not(.text-success):not(.text-warning) {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* Override khusus untuk halaman home - PRIORITAS SANGAT TINGGI */
+.section .section-body h2,
+.section .section-body h5,
+section.section .section-body h2,
+section.section .section-body h5,
+div.section-body h2,
+div.section-body h5,
+.section-body > h2,
+.section-body > h5,
+section .section-body > h2,
+section .section-body > h5 {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* Override ULTRA SPESIFIK untuk home page */
+section.section div.section-body h2,
+section.section div.section-body h5,
+.section .section-body h2:first-of-type,
+.section .section-body h5:first-of-type {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - PRIORITAS TERTINGGI
+   Untuk memastikan teks "Sistem Informasi Akuntansi - AKN Sekolah Vokasi IPB" BIRU
+   ============================================ */
+body .main-content .section .section-body h2,
+body .main-content .section .section-body h5,
+#app .main-content .section .section-body h2,
+#app .main-content .section .section-body h5,
+.main-wrapper .main-content .section .section-body h2,
+.main-wrapper .main-content .section .section-body h5 {
+    color: #0056b3 !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* ============================================
+   OVERRIDE KHUSUS - HEADER TABEL TRANSAKSI PUTIH
+   No, Kode Akun, Debit, Kredit, Status
+   ============================================ */
+.table.table-bordered thead th,
+.table.table-bordered thead td,
+.box-body .table thead th,
+.box-body .table thead td,
+.box-body .table.table-bordered thead th,
+.box-body .table.table-bordered thead td,
+.section-body .box-body .table thead th,
+.section-body .box-body .table thead td,
+.section-body .box-body .table.table-bordered thead th,
+.section-body .box-body .table.table-bordered thead td,
+.section .box-body .table thead th,
+.section .box-body .table thead td,
+.section .box-body .table.table-bordered thead th,
+.section .box-body .table.table-bordered thead td,
+#tableLoop thead th,
+#tableLoop thead td,
+.table#tableLoop thead th,
+.table#tableLoop thead td,
+body .main-content .section .box-body .table thead th,
+body .main-content .section .box-body .table thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================
+   OVERRIDE KHUSUS - TFOOT di Laba Rugi PUTIH
+   LABA RUGI dan jumlahnya (23,930,000)
+   ============================================ */
+
+/* Force semua tfoot td menjadi PUTIH - PRIORITAS TINGGI */
+.section-body .card-body .table tfoot td,
+.section-body .card-body .table tfoot tr td,
+.section-body .table-responsive .table tfoot td,
+.section-body .table-responsive .table tfoot tr td,
+.section .card-body .table tfoot td,
+.section .card-body .table tfoot tr td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Force text-left dan text-right di tfoot menjadi PUTIH */
+.section-body .card-body .table tfoot td.text-left,
+.section-body .card-body .table tfoot td.text-right,
+.section-body .table-responsive .table tfoot td.text-left,
+.section-body .table-responsive .table tfoot td.text-right,
+.section .card-body .table tfoot td.text-left,
+.section .card-body .table tfoot td.text-right {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE SANGAT SPESIFIK - TFOOT Laba Rugi PUTIH
+   Untuk table dengan class table-hover, table-striped, table-md
+   ============================================ */
+
+/* Force tfoot di table dengan class table-hover, table-striped, table-md menjadi PUTIH */
+.table.table-hover.table-striped.table-md tfoot td,
+.table.table-hover.table-striped tfoot td,
+.table.table-striped.table-md tfoot td,
+.table.table-hover.table-md tfoot td,
+.section-body .card-body .table.table-hover.table-striped.table-md tfoot td,
+.section-body .card-body .table.table-hover.table-striped tfoot td,
+.section-body .card-body .table.table-striped.table-md tfoot td,
+.section-body .table-responsive .table.table-hover.table-striped.table-md tfoot td,
+.section-body .table-responsive .table.table-hover.table-striped tfoot td,
+.section-body .table-responsive .table.table-striped.table-md tfoot td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Force text-left dan text-right di tfoot table-hover/striped menjadi PUTIH */
+.table.table-hover.table-striped.table-md tfoot td.text-left,
+.table.table-hover.table-striped.table-md tfoot td.text-right,
+.table.table-hover.table-striped tfoot td.text-left,
+.table.table-hover.table-striped tfoot td.text-right,
+.table.table-striped.table-md tfoot td.text-left,
+.table.table-striped.table-md tfoot td.text-right,
+.section-body .card-body .table.table-hover.table-striped.table-md tfoot td.text-left,
+.section-body .card-body .table.table-hover.table-striped.table-md tfoot td.text-right,
+.section-body .table-responsive .table.table-hover.table-striped.table-md tfoot td.text-left,
+.section-body .table-responsive .table.table-hover.table-striped.table-md tfoot td.text-right {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============================================
+   OVERRIDE FINAL - HEADER TABEL TRANSAKSI PUTIH
+   Prioritas TERTINGGI untuk memastikan "No, Kode Akun, Debit, Kredit, Status" PUTIH
+   ============================================ */
+body .main-content .section .section-body .box-body .table thead th,
+body .main-content .section .section-body .box-body .table thead td,
+body .main-content .section .card-body .box-body .table thead th,
+body .main-content .section .card-body .box-body .table thead td,
+#app .main-content .section .section-body .box-body .table thead th,
+#app .main-content .section .section-body .box-body .table thead td,
+.main-wrapper .main-content .section .section-body .box-body .table thead th,
+.main-wrapper .main-content .section .section-body .box-body .table thead td {
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
 }

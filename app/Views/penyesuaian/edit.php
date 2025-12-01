@@ -40,14 +40,14 @@
                         <input type="text" class="form-control" name="jumlah" placeholder="Jumlah" required value="<?= $dtpenyesuaian->jumlah ?>">
                     </div>
                     <div class="box-body">
-                        <table class="table table-bordered" ">
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Kode Akun</th>
-                                    <th>Debit</th>
-                                    <th>Kredit</th>
-                                    <th>Status</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">No</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Kode Akun</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Debit</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Kredit</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Status</th>
                                 </tr>
                             </thead>
                             <tbody>

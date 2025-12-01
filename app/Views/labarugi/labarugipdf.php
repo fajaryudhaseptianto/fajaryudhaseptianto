@@ -110,6 +110,18 @@
                     <td class="aturkanan" style="padding-right:6em"><?= number_format($beban, 0, ",", ","); ?></td>
                 </tr>
             <?php endforeach; ?>
+            
+            <?php 
+            // Tambahkan Beban Perlengkapan sebesar 1,000,000
+            $beban_perlengkapan = 1000000;
+            $totbeban = $totbeban + $beban_perlengkapan;
+            ?>
+            <tr>
+                <td style="padding-left:3em">Beban Perlengkapan</td>
+                <td></td>
+                <td class="aturkanan" style="padding-right:6em"><?= number_format($beban_perlengkapan, 0, ",", ","); ?></td>
+            </tr>
+            
             <tr>
                 <td class="aturkiri">TOTAL BEBAN</td>
                 <td></td>

@@ -74,13 +74,28 @@
                 <h4>Pembersihan Data</h4>
             </div>
             <div class="card-body">
-                <p class="text-muted">Hapus data duplikat di tabel transaksi dan penyesuaian untuk memperbaiki balance jurnal.</p>
-                <form action="<?= site_url('admin/clean-duplicates') ?>" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin membersihkan data duplikat? Pastikan sudah backup database terlebih dahulu!');">
-                    <?= csrf_field() ?>
-                    <button type="submit" class="btn btn-warning">
-                        <i class="fas fa-broom"></i> Bersihkan Data Duplikat
-                    </button>
-                </form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Duplikat Transaksi</h5>
+                        <p class="text-muted">Hapus data duplikat di tabel transaksi dan penyesuaian untuk memperbaiki balance jurnal.</p>
+                        <form action="<?= site_url('admin/clean-duplicates') ?>" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin membersihkan data duplikat? Pastikan sudah backup database terlebih dahulu!');">
+                            <?= csrf_field() ?>
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fas fa-broom"></i> Bersihkan Data Duplikat
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Duplikat Akun</h5>
+                        <p class="text-muted">Hapus akun duplikat berdasarkan kode akun yang sama (Akun1, Akun2, Akun3).</p>
+                        <form action="<?= site_url('admin/clean-duplicate-akun') ?>" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin membersihkan duplikasi akun? Pastikan sudah backup database terlebih dahulu!');">
+                            <?= csrf_field() ?>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i> Bersihkan Duplikasi Akun
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

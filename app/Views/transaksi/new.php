@@ -37,12 +37,12 @@
                         <table class="table table-bordered" id="tableLoop">
                             <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Kode Akun</th>
-                                    <th>Debit</th>
-                                    <th>Kredit</th>
-                                    <th>Status</th>
-                                    <th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">No</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Kode Akun</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Debit</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Kredit</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">Status</th>
+                                    <th style="color: #ffffff !important; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important; font-weight: 700 !important;">
                                         <button class=" btn btn-primary btn-sm btn-block" id="Barisbaru"><i class="fa fa-plus"></i> Add Baris</button>
                                     </th>
                                 </tr>

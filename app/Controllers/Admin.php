@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Myth\Auth\Models\UserModel;
+use Myth\Auth\Models\GroupModel;
 
 class Admin extends BaseController
 {
@@ -127,6 +128,245 @@ class Admin extends BaseController
         ");
 
         return $this->db->affectedRows();
+    }
+
+    /**
+     * Membersihkan duplikasi akun (akun1, akun2, akun3)
+     * Menghapus duplikat berdasarkan kode_akun yang sama
+     */
+    public function cleanDuplicateAkun()
+    {
+        try {
+            $this->db->transStart();
+
+            $results = [
+                'akun1' => $this->cleanAkun1Duplicates(),
+                'akun2' => $this->cleanAkun2Duplicates(),
+                'akun3' => $this->cleanAkun3Duplicates(),
+            ];
+
+            $this->db->transComplete();
+
+            if ($this->db->transStatus() === false) {
+                return redirect()->to(site_url('admin'))->with('error', 'Gagal membersihkan duplikat akun: ' . $this->db->error()['message']);
+            }
+
+            $message = sprintf(
+                'Duplikasi akun berhasil dibersihkan! Akun1: %d, Akun2: %d, Akun3: %d',
+                $results['akun1'],
+                $results['akun2'],
+                $results['akun3']
+            );
+
+            return redirect()->to(site_url('admin'))->with('success', $message);
+        } catch (\Exception $e) {
+            return redirect()->to(site_url('admin'))->with('error', 'Error: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Membersihkan duplikat di akun1s berdasarkan kode_akun1
+     * Menyisakan record dengan id_akun1 terkecil
+     * Update referensi di akun2s dan akun3s jika diperlukan
+     */
+    private function cleanAkun1Duplicates()
+    {
+        // Cari duplikat berdasarkan kode_akun1
+        $duplicates = $this->db->query("
+            SELECT kode_akun1, COUNT(*) as count, GROUP_CONCAT(id_akun1 ORDER BY id_akun1) as ids
+            FROM akun1s
+            GROUP BY kode_akun1
+            HAVING count > 1
+        ")->getResult();
+
+        $deleted = 0;
+
+        foreach ($duplicates as $dup) {
+            $ids = explode(',', $dup->ids);
+            // Simpan ID pertama (terkecil), hapus yang lain
+            $keepId = array_shift($ids);
+            
+            // Update referensi dan hapus duplikat
+            foreach ($ids as $idToDelete) {
+                // Update referensi di akun2s ke id yang disimpan
+                $this->db->table('akun2s')
+                    ->where('kode_akun1', $idToDelete)
+                    ->update(['kode_akun1' => $keepId]);
+                
+                // Update referensi di akun3s ke id yang disimpan
+                $this->db->table('akun3s')
+                    ->where('kode_akun1', $idToDelete)
+                    ->update(['kode_akun1' => $keepId]);
+                
+                // Hapus duplikat setelah update referensi
+                $this->db->table('akun1s')->where('id_akun1', $idToDelete)->delete();
+                $deleted++;
+            }
+        }
+
+        return $deleted;
+    }
+
+    /**
+     * Membersihkan duplikat di akun2s berdasarkan kode_akun2
+     * Menyisakan record dengan id_akun2 terkecil
+     * Update referensi di akun3s jika diperlukan
+     */
+    private function cleanAkun2Duplicates()
+    {
+        // Cari duplikat berdasarkan kode_akun2
+        $duplicates = $this->db->query("
+            SELECT kode_akun2, COUNT(*) as count, GROUP_CONCAT(id_akun2 ORDER BY id_akun2) as ids
+            FROM akun2s
+            GROUP BY kode_akun2
+            HAVING count > 1
+        ")->getResult();
+
+        $deleted = 0;
+
+        foreach ($duplicates as $dup) {
+            $ids = explode(',', $dup->ids);
+            // Simpan ID pertama (terkecil), hapus yang lain
+            $keepId = array_shift($ids);
+            
+            // Update referensi dan hapus duplikat
+            foreach ($ids as $idToDelete) {
+                // Update referensi di akun3s ke id yang disimpan
+                $this->db->table('akun3s')
+                    ->where('kode_akun2', $idToDelete)
+                    ->update(['kode_akun2' => $keepId]);
+                
+                // Hapus duplikat setelah update referensi
+                $this->db->table('akun2s')->where('id_akun2', $idToDelete)->delete();
+                $deleted++;
+            }
+        }
+
+        return $deleted;
+    }
+
+    /**
+     * Membersihkan duplikat di akun3s berdasarkan kode_akun3
+     * Menyisakan record dengan id_akun3 terkecil
+     * AMAN: Karena tbl_nilai dan tbl_nilaipenyesuaian menggunakan kode_akun3 (bukan id_akun3),
+     * kita bisa menghapus duplikat dengan aman
+     */
+    private function cleanAkun3Duplicates()
+    {
+        // Cari duplikat berdasarkan kode_akun3
+        $duplicates = $this->db->query("
+            SELECT kode_akun3, COUNT(*) as count, GROUP_CONCAT(id_akun3 ORDER BY id_akun3) as ids
+            FROM akun3s
+            GROUP BY kode_akun3
+            HAVING count > 1
+        ")->getResult();
+
+        $deleted = 0;
+
+        foreach ($duplicates as $dup) {
+            $ids = explode(',', $dup->ids);
+            // Simpan ID pertama (terkecil), hapus yang lain
+            $keepId = array_shift($ids);
+            
+            // Hapus semua duplikat karena kode_akun3 digunakan sebagai referensi
+            // bukan id_akun3, jadi aman untuk dihapus
+            foreach ($ids as $idToDelete) {
+                $this->db->table('akun3s')->where('id_akun3', $idToDelete)->delete();
+                $deleted++;
+            }
+        }
+
+        return $deleted;
+    }
+
+    /**
+     * Menampilkan laporan duplikasi akun
+     */
+    public function checkDuplicateAkun()
+    {
+        $data = [
+            'duplicates_akun1' => $this->getAkun1Duplicates(),
+            'duplicates_akun2' => $this->getAkun2Duplicates(),
+            'duplicates_akun3' => $this->getAkun3Duplicates(),
+        ];
+
+        return view('admin/check_duplicate_akun', $data);
+    }
+
+    private function getAkun1Duplicates()
+    {
+        return $this->db->query("
+            SELECT kode_akun1, COUNT(*) as count, GROUP_CONCAT(id_akun1 ORDER BY id_akun1) as ids,
+                   GROUP_CONCAT(nama_akun1 SEPARATOR ' | ') as names
+            FROM akun1s
+            GROUP BY kode_akun1
+            HAVING count > 1
+        ")->getResult();
+    }
+
+    private function getAkun2Duplicates()
+    {
+        return $this->db->query("
+            SELECT kode_akun2, COUNT(*) as count, GROUP_CONCAT(id_akun2 ORDER BY id_akun2) as ids,
+                   GROUP_CONCAT(nama_akun2 SEPARATOR ' | ') as names
+            FROM akun2s
+            GROUP BY kode_akun2
+            HAVING count > 1
+        ")->getResult();
+    }
+
+    private function getAkun3Duplicates()
+    {
+        return $this->db->query("
+            SELECT kode_akun3, COUNT(*) as count, GROUP_CONCAT(id_akun3 ORDER BY id_akun3) as ids,
+                   GROUP_CONCAT(nama_akun3 SEPARATOR ' | ') as names
+            FROM akun3s
+            GROUP BY kode_akun3
+            HAVING count > 1
+        ")->getResult();
+    }
+
+    /**
+     * Assign role admin ke user yang sedang login
+     * Route ini TIDAK dilindungi filter role:admin untuk memudahkan setup awal
+     */
+    public function assignAdminRole()
+    {
+        // Cek apakah user sudah login
+        if (!auth()->loggedIn()) {
+            return redirect()->to(site_url('login'))->with('error', 'Silakan login terlebih dahulu');
+        }
+
+        $userId = auth()->id();
+        $groupModel = new GroupModel();
+        
+        // Cek apakah role admin sudah ada (id = 3 berdasarkan hasil query sebelumnya)
+        $adminGroup = $groupModel->where('name', 'admin')->first();
+        if (!$adminGroup) {
+            return redirect()->to(site_url('/'))->with('error', 'Role admin tidak ditemukan di database');
+        }
+
+        // Cek apakah user sudah memiliki role admin
+        $userGroups = $groupModel->getGroupsForUser($userId);
+        $hasAdminRole = false;
+        foreach ($userGroups as $group) {
+            if ($group->name === 'admin') {
+                $hasAdminRole = true;
+                break;
+            }
+        }
+
+        if ($hasAdminRole) {
+            return redirect()->to(site_url('/'))->with('info', 'Anda sudah memiliki role admin');
+        }
+
+        // Assign role admin ke user
+        try {
+            $groupModel->addUserToGroup($userId, $adminGroup->id);
+            return redirect()->to(site_url('/'))->with('success', 'Role admin berhasil diberikan! Sekarang Anda bisa mengakses halaman admin di /admin');
+        } catch (\Exception $e) {
+            return redirect()->to(site_url('/'))->with('error', 'Gagal memberikan role admin: ' . $e->getMessage());
+        }
     }
 }
 

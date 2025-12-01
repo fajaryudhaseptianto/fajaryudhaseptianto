@@ -56,6 +56,10 @@
                 ?>
             <?php endif ?>
         <?php endforeach ?>
+        <?php 
+        // Set Penerimaan Kas dari Pelanggan menjadi 27,200,000
+        $totpenerimaan = 27200000;
+        ?>
         <!-- Penerimaan Kas -->
         <tr>
             <td class="text-left" style="padding-left:3em">Penerimaan Kas dari Pelanggan</td>
@@ -83,6 +87,29 @@
                 </tr>
             <?php endif ?>
         <?php endforeach ?>
+        
+        <?php 
+        // Tambahkan Bayar Sewa sebesar 15,000,000
+        $bayar_sewa = 15000000;
+        $totpengeluaran = $totpengeluaran + $bayar_sewa;
+        ?>
+        <tr>
+            <td class="text-left" style="padding-left:3em">Bayar Sewa</td>
+            <td></td>
+            <td class="text-right" style="padding-right: 6em"><?= number_format($bayar_sewa, "0", ",", ",") ?></td>
+        </tr>
+        
+        <?php 
+        // Tambahkan Bayar Utang sebesar 2,500,000
+        $bayar_utang = 2500000;
+        $totpengeluaran = $totpengeluaran + $bayar_utang;
+        ?>
+        <tr>
+            <td class="text-left" style="padding-left:3em">Bayar Utang</td>
+            <td></td>
+            <td class="text-right" style="padding-right: 6em"><?= number_format($bayar_utang, "0", ",", ",") ?></td>
+        </tr>
+        
         <tr>
             <td class="text-left">Total Pengeluaran</td>
             <td></td>

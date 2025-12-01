@@ -63,10 +63,15 @@ $routes->get('/posting', 'Posting::index');
 $routes->post('/posting', 'Posting::index');
 
 
+// Route untuk assign admin role (TIDAK dilindungi filter untuk setup awal)
+$routes->get('/admin/assign-role', 'Admin::assignAdminRole', ['filter' => 'login']);
+
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->post('/admin/create-user', 'Admin::createUser', ['filter' => 'role:admin']);
 $routes->post('/admin/clean-duplicates', 'Admin::cleanDuplicates', ['filter' => 'role:admin']);
+$routes->post('/admin/clean-duplicate-akun', 'Admin::cleanDuplicateAkun', ['filter' => 'role:admin']);
+$routes->get('/admin/check-duplicate-akun', 'Admin::checkDuplicateAkun', ['filter' => 'role:admin']);
 
 $routes->resource('akun2');
 $routes->resource('akun3');
